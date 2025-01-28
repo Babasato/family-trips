@@ -127,6 +127,56 @@ a:hover {
   animation-name: fadeInRight;
 }
 
+/* Add these to your existing CSS */
+.nav-submenu {
+    display: none;
+    position: absolute;
+    right: 100%;  /* Positions submenu to the left of the navbar */
+    top: 0;
+    background: transparent;
+    padding-right: 10px;
+}
+
+.nav-item.active .nav-submenu {
+    display: block;
+}
+
+.nav-toggle {
+    color: #fff;
+    min-height: 32px;
+    background: transparent;
+    padding: 5px 45px 5px 25px;
+    border-right: none;
+    cursor: pointer;
+    display: block;
+}
+
+/* Keep your existing hover effects */
+.fixed-side-navbar:hover .nav-toggle span {
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
+    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 2px 12px;
+    border-radius: 15px;
+}
+
+/* Style for the submenu links */
+.nav-submenu .nav-link {
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 2px 12px;
+    border-radius: 15px;
+    margin: 5px 0;
+    display: block;
+}
+
 .primary-button a {
   display: inline-block;
   background-color: #7ed957;
