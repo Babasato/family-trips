@@ -52,3 +52,19 @@ jQuery(document).ready(function ($) {
     itemsMobile: false,
   });
 });
+
+// Add this to your JavaScript
+$(document).ready(function() {
+    $('.nav-toggle').click(function(e) {
+        e.stopPropagation(); // Prevents click from bubbling up
+        $('.nav-item').not($(this).parent()).removeClass('active');
+        $(this).parent('.nav-item').toggleClass('active');
+    });
+
+    // Close submenu when clicking outside
+    $(document).click(function(e) {
+        if (!$(e.target).closest('.fixed-side-navbar').length) {
+            $('.nav-item').removeClass('active');
+        }
+    });
+});
