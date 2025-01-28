@@ -53,3 +53,22 @@ jQuery(document).ready(function ($) {
   });
 });
 
+// Selects all elements with class 'nav-link' and loops through each one
+document.querySelectorAll('.nav-link').forEach(link => {
+    // Adds a click event listener to each nav link
+    link.addEventListener('click', function(e) {
+        // Prevents the default immediate navigation behavior
+        e.preventDefault();
+        
+        // Gets the destination URL from the href attribute
+        const href = this.getAttribute('href');
+        
+        // Sets a timer for 300 milliseconds (0.3 seconds)
+        setTimeout(() => {
+            // After the delay, navigates to the stored URL
+            window.location.href = href;
+        }, 300); // 300ms is enough time for users to see the hover effect
+    });
+});
+
+
